@@ -1,6 +1,7 @@
 import logging
 
-from src.todoist_api import TodoistApi
+
+from src.ticktick_api import TicktickApi
 from ulauncher.api.client.EventListener import EventListener
 from ulauncher.api.client.Extension import Extension
 from ulauncher.api.shared.action.ExtensionCustomAction import \
@@ -14,13 +15,17 @@ from ulauncher.api.shared.event import (ItemEnterEvent, KeywordQueryEvent,
                                         PreferencesUpdateEvent)
 from ulauncher.api.shared.item.ExtensionResultItem import ExtensionResultItem
 
+
+
+
+
 logger = logging.getLogger(__name__)
 
-class TodoistCaptureExtension(Extension):
-    todoist_api = TodoistApi()
+class TicktickCaptureExtension(Extension):
+    todoist_api = TicktickApi()
 
     def __init__(self):
-        super(TodoistCaptureExtension, self).__init__()
+        super(TicktickCaptureExtension, self).__init__()
         self.subscribe(KeywordQueryEvent, KeywordQueryEventListener())
         self.subscribe(ItemEnterEvent, ItemEnterEventListener())
         self.subscribe(PreferencesEvent, PreferencesEventListener())
@@ -29,7 +34,7 @@ class TodoistCaptureExtension(Extension):
 
 
 class KeywordQueryEventListener(EventListener):
-    def on_event(self, event, extension: TodoistCaptureExtension):
+    def on_event(self, event, extension: TicktickCaptureExtension):
         text = event.get_argument() or None
 
         if not text:
@@ -49,7 +54,7 @@ class KeywordQueryEventListener(EventListener):
         ])
 
 class ItemEnterEventListener(EventListener):
-    def on_event(self, event, extension: TodoistCaptureExtension):
+    def on_event(self, event, extension: TicktickCaptureExtension):
         task_name = event.get_data()
         logger.info("Capturing task: %s" % task_name)
 
@@ -75,14 +80,14 @@ class ItemEnterEventListener(EventListener):
         )])
 
 class PreferencesEventListener(EventListener):
-    def on_event(self, event, extension: TodoistCaptureExtension):
+    def on_event(self, event, extension: TicktickCaptureExtension):
         extension.keyword = event.preferences["keyword"]
         extension.todoist_api.set_token(event.preferences["api_token"])
 
 class PreferencesUpdateEventListener(EventListener):
-    def on_event(self, event, extension: TodoistCaptureExtension):
+    def on_event(self, event, extension: TicktickCaptureExtension):
         if event.id == "api_token":
             extension.todoist_api.set_token(event.preferences["api_token"])
 
 if __name__ == "__main__":
-    TodoistCaptureExtension().run()
+    TicktickCaptureExtension().run()

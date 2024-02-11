@@ -1,8 +1,11 @@
+import logging
 import requests
 import time
 
-class TodoistApi:
-    url = "https://api.todoist.com/rest/v2/tasks"
+
+logger = logging.getLogger(__name__)
+class TicktickApi:
+    url = "https://api.ticktick.com/open/v1/task"
     token = None
 
     def set_token(self, token):
@@ -12,7 +15,7 @@ class TodoistApi:
         response = requests.post(
             self.url,
             json={
-                "content": task,
+                "title": task,
             },
             headers={
                 "Authorization": "Bearer %s" % self.token,
@@ -20,5 +23,6 @@ class TodoistApi:
                 "Content-Type": "application/json",
             }
         )
-
-        return None if response.status_code == 200 else "Error communicating with Todoist. Repsonse code is %s. " % response.status_code
+        logger.info(self.token)
+        logger.info(self.url)
+        return None if response.status_code == 200 else "Error communicating with Ticktick. Repsonse code is %s. " % response.status_code

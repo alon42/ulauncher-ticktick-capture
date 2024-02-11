@@ -1,22 +1,22 @@
 {
   "required_api_version": "^2.0.0",
-  "name": "Todoist Capture",
-  "description": "Capture an idea in Todoist",
-  "developer_name": "Pascal Betting",
+  "name": "Ticktick Capture",
+  "description": "Capture an idea in Ticktick",
+  "developer_name": "Alon Nagar (based on Pascal Betting work)",
   "icon": "images/icon.png",
   "preferences": [
     {
       "id": "keyword",
       "type": "keyword",
-      "name": "Todoist Capture extension",
-      "description": "The keyword to start the Todoist Capture extension",
-      "default_value": "td"
+      "name": "Ticktick Capture extension",
+      "description": "The keyword to start the Ticktick Capture extension",
+      "default_value": "tc"
     },
     {
       "id": "api_token",
       "type": "input",
-      "name": "Todoist API token",
-      "description": "The API token provided by Todist to access the Todoist API. Find it here: https://app.todoist.com/app/settings/integrations/developer",
+      "name": "Ticktick access token",
+      "description": "Create a ticktick app for yourself, to get the token follow: https://github.com/UnkwUsr/ticktask?tab=readme-ov-file#setup and paste it here",
       "default_value": ""
     }
   ]
