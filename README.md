@@ -1,14 +1,16 @@
-# ulauncher-todoist-capture
+# ulauncher-ticktick-capture
 
-> [ulauncher](https://ulauncher.io/) Extension to capture an idea in your [Todoist](https://todoist.com/) inbox.
-
-## Demo
-
-https://github.com/pascalbe-dev/ulauncher-todoist-capture/assets/26909176/27b6ec34-4599-4f61-a358-89e2a0587130
+> [ulauncher](https://ulauncher.io/) Extension to capture an idea in your [Ticktick](https://ticktick.com/) inbox.
 
 ## Features
 
-- write idea and store it into todoist
+- write idea and store it into ticktick
+
+# thanks
+This code is based on 
+https://github.com/pascalbe-dev/ulauncher-todoist-capture
+
+I thanks `Pascal Betting` for it
 
 ## Requirements
 
@@ -19,11 +21,11 @@ https://github.com/pascalbe-dev/ulauncher-todoist-capture/assets/26909176/27b6ec
 
 Open ulauncher preferences window -> extensions -> add extension and paste the following url:
 
-`https://github.com/pascalbe-dev/ulauncher-todoist-capture.git`
+`https://github.com/alon42/ulauncher-ticktick-capture.git`
 
 ## Configuration
 
-- Before usage you need to configure your Todoist API token in plugin preferences. Find or create your API token [here](https://app.todoist.com/app/settings/integrations/developer).
+- Before usage you need to configure your ticktick API token in plugin preferences. Find or create your API token [here](https://app.ticktick.com/app/settings/integrations/developer).
 
 ## Contribution
 
@@ -38,8 +40,8 @@ Please refer to [the contribution guidelines](./CONTRIBUTING.md)
 
 ### Steps
 
-1. Clone the repo `git clone https://github.com/pascalbe-dev/ulauncher-todoist-capture.git`
-2. Cd into the folder `cd ulauncher-todoist-capture`
+1. Clone the repo `git clone https://github.com/alon42/ulauncher-ticktick-capture.git`
+2. Cd into the folder `cd ulauncher-ticktick-capture`
 3. Watch and deploy your extension locally for simple developing and testing in parallel `./watch-and-deploy.sh` (this will restart ulauncher without extensions and deploy this extension at the beginning and each time a file in this directory changes)
 4. Check the extension log `less /tmp/ulauncher-extension.log +F`
 5. Check ulauncher dev log `less /tmp/ulauncher.log +F`
