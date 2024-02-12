@@ -10,7 +10,14 @@
       "type": "keyword",
       "name": "Ticktick Capture extension",
       "description": "The keyword to start the Ticktick Capture extension",
-      "default_value": "tc"
+      "default_value": "t"
+    },
+    {
+      "id": "keyword",
+      "type": "keyword",
+      "name": "Ticktick Capture extension, keyboard layout 2",
+      "description": "The keyword to start the Ticktick Capture extension",
+      "default_value": "מ"
     },
     {
       "id": "api_token",

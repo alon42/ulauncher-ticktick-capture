@@ -43,5 +43,7 @@ Please refer to [the contribution guidelines](./CONTRIBUTING.md)
 1. Clone the repo `git clone https://github.com/alon42/ulauncher-ticktick-capture.git`
 2. Cd into the folder `cd ulauncher-ticktick-capture`
 3. Watch and deploy your extension locally for simple developing and testing in parallel `./watch-and-deploy.sh` (this will restart ulauncher without extensions and deploy this extension at the beginning and each time a file in this directory changes)
-4. Check the extension log `less /tmp/ulauncher-extension.log +F`
-5. Check ulauncher dev log `less /tmp/ulauncher.log +F`
+4. go to "extentions" section in ulauncher, you will have there instruction for how to start the extention in dev,
+ get out of "extentions" screen, get back, and WHALLA, you see your extention dev
+5. Check the extension log `less /tmp/ulauncher-extension.log +F`
+6. Check ulauncher dev log `less /tmp/ulauncher.log +F`

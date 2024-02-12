@@ -10,11 +10,11 @@ sleep 2
 
 # redeploy app when files change
 export VERBOSE=1
-export ULAUNCHER_WS_API=ws://127.0.0.1:5054/ulauncher-todoist-capture
+export ULAUNCHER_WS_API=ws://127.0.0.1:5054/ulauncher-ticktick-capture
 export PYTHONPATH=/usr/lib/python3/dist-packages
 
 startExtension() {
-    /usr/bin/python3 $HOME/.local/share/ulauncher/extensions/ulauncher-todoist-capture/main.py >> /tmp/ulauncher-extension.log 2>&1 &
+    /usr/bin/python3 $HOME/.local/share/ulauncher/extensions/ulauncher-ticktick-capture/main.py >> /tmp/ulauncher-extension.log 2>&1 &
     pid=$(echo $!)
 }
 
